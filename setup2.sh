@@ -136,12 +136,14 @@ while true; do
 
     case $opcion in
         1)
-            read -p "Ingrese nombre de usuario: " user
-            useradd -m -s /bin/bash "$user"
-            passwd -d "$user"
-            echo ">>> Usuario $user creado sin contraseña."
-            read -p "Presiona Enter para continuar..."
-            ;;
+        
+    read -p "Ingrese nombre de usuario: " user
+    useradd -m -s /bin/bash "$user"
+    echo ">>> Usuario $user creado. Ahora configure la contraseña:"
+    passwd "$user"
+    read -p "Presiona Enter para continuar..."
+    ;;
+
         2)
             read -p "Ingrese nombre de usuario a eliminar: " user
             deluser "$user"
