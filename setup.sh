@@ -3,9 +3,9 @@
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; RESET='\033[0m'
 
-echo -e "${CYAN}==========================================================${RESET}"
-echo -e "${YELLOW}   INSTALADOR CHARLY EL IMPARABLE${RESET}"
-echo -e "${CYAN}==========================================================${RESET}"
+echo -e "${CYAN}============================================================${RESET}"
+echo -e "${YELLOW} INSTALADOR CHARLY EL IMPARABLE${RESET}"
+echo -e "${CYAN}============================================================${RESET}"
 
 # Actualizar sistema
 apt update -y && apt upgrade -y
@@ -19,7 +19,7 @@ touch /etc/ADMcgh/PDirect.py
 echo -e "${GREEN}>>> Archivo PDirect.py creado en /etc/ADMcgh${RESET}"
 
 # Crear servicio systemd
-tee /etc/systemd/system/proxy-charly.service > /dev/null <<'EOF'
+tee /etc/systemd/system/proxy-charly.service > /dev/null << 'EOF'
 [Unit]
 Description=Proxy Python CHARLY EL IMPARABLE
 After=network.target
@@ -42,15 +42,15 @@ systemctl enable proxy-charly.service
 systemctl start proxy-charly.service
 echo -e "${GREEN}>>> Servicio proxy-charly activado${RESET}"
 
-# Instalar panel de usuario
-tee /usr/local/bin/panel-charly.sh > /dev/null <<'EOF'
+# Crear panel
+tee /usr/local/bin/panel-charly.sh > /dev/null << 'EOF'
 #!/bin/bash
 RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; RESET='\033[0m'
 while true; do
     clear
-    echo -e "${CYAN}==========================================================${RESET}"
-    echo -e "${YELLOW}   PANEL CHARLY EL IMPARABLE${RESET}"
-    echo -e "${CYAN}==========================================================${RESET}"
+    echo -e "${CYAN}============================================================${RESET}"
+    echo -e "${YELLOW} PANEL CHARLY EL IMPARABLE${RESET}"
+    echo -e "${CYAN}============================================================${RESET}"
     echo -e "${GREEN}1) Crear usuario${RESET}"
     echo -e "${GREEN}2) Eliminar usuario${RESET}"
     echo -e "${GREEN}3) Ver usuarios creados${RESET}"
